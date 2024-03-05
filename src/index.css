@@ -179,6 +179,15 @@ a:hover {
   padding: 10px;
  
 }
+.banner{
+  width: 1000px;
+  margin: auto;
+
+}
+.banner img{
+  width: 1000px;
+  height: 350px;
+}
 body {
   margin: auto;
   padding: 0;
