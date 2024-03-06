@@ -179,6 +179,25 @@ a:hover {
   padding: 10px;
  
 }
+.Content {
+  width: 900px;
+  margin: auto;
+}
+.Content .title{
+display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  /* Chia thành hai cột bằng nhau */
+}
+.Content .text2{
+  color: #1a1a1a;
+}
+.Content .text {
+  color: rgba(113, 128, 150, 1);
+}
+.Content .title p{
+  padding-top: 5px;
+  color: rgba(113, 128, 150, 1);
+}
 .banner{
   width: 1000px;
   margin: auto;
