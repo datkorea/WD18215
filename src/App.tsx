@@ -1,27 +1,28 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import ProductAdd from './component/ProductAdd';
 // import './App.css'
-import Product from './component/Product';
-import Header from './component/lab1/Header';
-import HeadSection from './component/lab1/HeadSection';
-import CardLatest from './component/lab1/CardLatest';
-import CardPanel from './component/lab1/CardPanel';
-import Section from './component/lab1/Section';
-import Footer from './component/lab1/Footer';
-import Articles from './Articles';
+// import Articles from './Articles';
+
+interface IProduct {
+  id: number;
+  name: string;
+  price: number;
+}
 
 function App() {
-
+  const [products, setProducts] = useState < IProduct[] > ([]);
+  useEffect(() => 
+  {
+    (async () => {
+      const response = await fetch("http://localhost:3000/products");
+      const data = await response.json();
+      setProducts(data);
+    })();
+  },[] )
 
   return (
     <>
-      {/* <Header />
-      <HeadSection />
-      <CardLatest />
-      <CardPanel />
-      <Section />
-      <Footer /> */}
-
-      <Articles />
+     <ProductAdd />
     </>
   );
 }
