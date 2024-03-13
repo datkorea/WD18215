@@ -10,39 +10,14 @@ import ProductEdit from './component/ProductEdit';
 
 
 function App() {
-  const [products, setProducts] = useState < IProduct[] > ([]);
-  useEffect(() => {
-    (async () => {
-      const data = await getProducts();
-      setProducts(data);
-    })();
-  }, []);
-  
-  const onHandleAdd = async (product: IProduct) => {
-    try {
-      const data = await addProduct(product);
-      setProducts([...products, data]);
-    } catch (error) {}
-  };
-   const onHandleEdit = async (product: IProduct) => {
-     try {
-       const data = await EditProduct(product);
-       setProducts(products.map((item) => (item.id ==data.id ? data : item)));
-     } catch (error) {}
-   };
-  const onHandleRemove = async (id: number) => {
-    try {
-      const data = await removeProduct(id);
-      setProducts(products.filter((item)=>item.id !== id));
-    } catch (error) {}
-  }
+ 
   return (
     <>
       <Routes>
         <Route path='/' element = {<h1>Homepage</h1>} />
-        <Route path='products' element = {<Products products={products } onRemove={onHandleRemove} />} />
-        <Route path='products/add' element = {<ProductAdd onAdd={onHandleAdd} />} />
-        <Route path='products/:id/edit' element = {<ProductEdit onEdit={onHandleEdit} />} />
+        <Route path='products' element = {<Products  />} />
+        {/* <Route path='products/add' element = {<ProductAdd  />} />
+        <Route path='products/:id/edit' element = {<ProductEdit />} /> */}
      </Routes>
     </>
   );

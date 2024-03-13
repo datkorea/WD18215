@@ -9,19 +9,16 @@ import React from 'react'
 // import Section from './component/lab1/Section';
 import App from './App';
 import { BrowserRouter } from 'react-router-dom';
-import { ProductContext } from './context/product';
+import ProductContextProvider from './context/ProductContextProvider';
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
-  <ProductContext.Provider
-   value={[
-    {id : 1, name: "A"},
-    { id: 2, name: "B" },
-  ]}
-  >
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
-  </ProductContext.Provider>
+<ProductContextProvider>
+  <ProductContextProvider>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+  </ProductContextProvider>
+</ProductContextProvider>
   // <div>
   //   <Header />
   //   <HeadSection />
