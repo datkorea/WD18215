@@ -1,10 +1,14 @@
 import React, { useContext } from 'react'
-import Counterco
+import { CounterContex } from '../context/CounterContextProvider';
 
 const { count, setCount } = useContext(CouterContext);
+console.log(count); //count: 10
 const Counter = () => {
   return (
-      <div>{ count}</div>
+    <div>
+      Counter {count}
+      <button onClick={() => setCount(count +1)}> Click</button>
+    </div>
   )
 }
 

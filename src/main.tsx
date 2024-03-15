@@ -11,6 +11,7 @@ import App from './App';
 import { BrowserRouter } from 'react-router-dom';
 import ProductContextProvider from './context/ProductContextProvider';
 
+// const count = 10;
 ReactDOM.createRoot(document.getElementById("root")!).render(
 <ProductContextProvider>
   <ProductContextProvider>
