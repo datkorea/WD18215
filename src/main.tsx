@@ -10,16 +10,19 @@ import React from 'react'
 import App from './App';
 import { BrowserRouter } from 'react-router-dom';
 import ProductContextProvider from './context/ProductContextProvider';
+import CounterContextProvider from './context/CounterContextProvider';
 
 // const count = 10;
 ReactDOM.createRoot(document.getElementById("root")!).render(
-<ProductContextProvider>
-  <ProductContextProvider>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
-  </ProductContextProvider>
-</ProductContextProvider>
+  <CounterContextProvider>
+    <ProductContextProvider>
+      <ProductContextProvider>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+      </ProductContextProvider>
+    </ProductContextProvider>
+  </CounterContextProvider>
   // <div>
   //   <Header />
   //   <HeadSection />

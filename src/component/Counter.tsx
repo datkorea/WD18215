@@ -1,15 +1,17 @@
 import React, { useContext } from 'react'
-import { CounterContex } from '../context/CounterContextProvider';
+import { CountContext, CounterContex } from '../context/CounterContextProvider';
 
-const { count, setCount } = useContext(CouterContext);
-console.log(count); //count: 10
 const Counter = () => {
+  const { count, dispatch } = useContext(CountContext);
   return (
     <div>
-      Counter {count}
-      <button onClick={() => setCount(count +1)}> Click</button>
+      Counter {count.value}
+      <button onClick={() => dispatch({ type: "INCREMENT" })}>INCREMENT</button>
+      <button onClick={() => dispatch({ type: "DECREMENT" })}>DECREMENT</button>
+      <button onClick={() => dispatch({ type: "INCRESE", payload: 10 })}>INCRESE</button>
+      {/* <button onClick={() => setCount(count +1)}> Click</button> */}
     </div>
-  )
+  );
 }
 
 export default Counter

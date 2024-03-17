@@ -1,17 +1,38 @@
-import { createContext, ReactNode, useState } from 'react';
+import { createContext, ReactNode, useReducer, useState } from 'react';
 
-export const CounterContex = createContext({});
-type CounterContextProviderProps = {
-    children: ReactNode;
+type Props = {
+  children: ReactNode;
+};
+export const CountContext = createContext({} as any);
+
+
+//Reducer
+const initialState = {
+  value: 10,
+};
+const reducer = (state : any , action : any) => {
+  switch (action.type) {
+    case "INCREMENT":
+      return { value: state.value + 1 };
+    case "DECREMENT":
+      return { value: state.value -1  };
+    case "INCRESE": 
+      return { value: state.value + action.payload }
+    default: return state;
+  }
 }
-const CounterContextProvider = ({children} : CounterContextProviderProps) =>{
-    const [count, setCount] = useState(10);
-    return (
-      <div>
-            <CounterContex.Provider value={{count,setCount}}> {children}
-                
-        </CounterContex.Provider>
-      </div>
-    );  
-}
+
+
+
+const CounterContextProvider = ({ children }: Props) => {
+  // const [count, setCount] = useState(10);
+  const [count, dispatch] = useReducer(reducer, initialState);
+  return (
+    <div>
+      <CountContext.Provider value={{ count, dispatch }}>
+        {children}
+      </CountContext.Provider>
+    </div>
+  );
+};
 export default CounterContextProvider;

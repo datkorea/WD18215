@@ -6,12 +6,12 @@ function Header() {
       <div className="menu-right">
         <ul>
           <li>
-            <a href="">Home</a>
+            <a href="/Home">Home</a>
           </li>
         </ul>
         <ul>
           <li>
-            <a href="/src/component/Article/Articles.tsx">Articles</a>
+            <a href="/articles">Articles</a>
           </li>
         </ul>
       </div>
