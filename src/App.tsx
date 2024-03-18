@@ -16,7 +16,7 @@ function App() {
  
   return (
     <>
-      <Counter />
+      {/* <Counter /> */}
       <Routes>
         <Route path="/" element={<h1>Homepage</h1>} />
         <Route path="products" element={<Products />} />
