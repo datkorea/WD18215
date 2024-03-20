@@ -9,7 +9,7 @@ const CardPanel = () => {
     const fetchProducts = async () => {
       try {
         const response = await getProducts();
-        setPanel(response.data);
+        setPanel(response);
         console.log(response);
       } catch (error) {
         console.error("Không có dữ liệu:", error);
