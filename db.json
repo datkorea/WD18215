@@ -2,18 +2,8 @@
   "products": [
     {
       "id": 4,
-      "name": "Product 4",
+      "name": "Sản phẩm update",
       "price": 400
-    },
-    {
-      "id": 5,
-      "name": "Product 5",
-      "price": 500
-    },
-    {
-      "id": 6,
-      "name": "Product 6",
-      "price": 600
     },
     {
       "id": 7,
